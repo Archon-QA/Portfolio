@@ -1,11 +1,15 @@
+import Hero from "@/components/hero/Hero";
 import Navbar from "@/components/layout/Navbar";
+import EnterpriseImpact from "@/components/sections/EnterpriseImpact";
 
 export default function Home() {
   return (
     <>
       <Navbar />
 
-      <main className="min-h-screen pt-20">
+      <main>
+        <Hero />
+        <EnterpriseImpact />
       </main>
     </>
   );
