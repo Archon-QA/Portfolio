@@ -1,3 +1,5 @@
+import SectionHeader from "../shared/SectionHeader";
+import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import JourneyCard from "@/components/ui/JourneyCard";
 
@@ -59,24 +61,17 @@ export default function ProfessionalJourney() {
     >
       <Container>
 
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-24">
 
-          <span className="text-sm uppercase tracking-[0.3em] text-blue-400">
-            Professional Journey
-          </span>
+  <SectionNumber number="05" />
 
-          <h2 className="mt-5 text-5xl font-bold text-white">
-            Growing Through Enterprise Engineering
-          </h2>
+  <SectionHeader
+    eyebrow="Professional Journey"
+    title="Growing Through Enterprise Engineering"
+    description="My career has been focused on building reliable enterprise quality engineering solutions, automating complex workflows and delivering measurable business impact across large-scale Supply Chain Management platforms."
+  />
 
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
-            My career has been focused on building reliable enterprise
-            quality engineering solutions, automating complex workflows
-            and delivering measurable business impact across large-scale
-            Supply Chain Management platforms.
-          </p>
-
-        </div>
+</div>
 
         <div className="space-y-10">
 

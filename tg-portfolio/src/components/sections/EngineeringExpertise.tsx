@@ -1,3 +1,5 @@
+import SectionHeader from "../shared/SectionHeader";
+import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import ExpertiseCard from "@/components/ui/ExpertiseCard";
 
@@ -51,26 +53,20 @@ const expertise = [
 export default function EngineeringExpertise() {
   return (
     <section
-      id="expertise"
+      id="skills"
       className="py-32"
     >
       <Container>
 
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-24">
 
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-            Engineering Expertise
-          </span>
+    <SectionNumber number="03" />
 
-          <h2 className="mt-5 text-5xl font-bold text-white">
-            Core Capabilities
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
-            My expertise extends beyond individual tools. I focus on
-            designing reliable automation solutions, validating complex
-            enterprise workflows and improving software delivery quality.
-          </p>
+    <SectionHeader
+    eyebrow="Engineering Expertise"
+    title="Core Capabilities"
+    description="My expertise extends beyond individual tools. I focus on designing reliable automation solutions, validating complex enterprise workflows and improving software delivery quality."
+    />
 
         </div>
 

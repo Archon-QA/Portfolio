@@ -1,30 +1,25 @@
+import SectionHeader from "../shared/SectionHeader";
+import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import InitiativeCard from "@/components/ui/InitiativeCard";
 
 export default function FeaturedInitiatives() {
   return (
     <section
-      id="projects"
+      id="case-studies"
       className="py-32"
     >
       <Container>
 
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-24">
 
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-            Featured Engineering Initiatives
-          </span>
+        <SectionNumber number="04" />
 
-          <h2 className="mt-5 text-5xl font-bold text-white">
-            Enterprise Case Studies
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
-            Enterprise engineering is measured by solving complex business
-            problems at scale. These initiatives highlight the challenges,
-            solutions and measurable outcomes from some of the most impactful
-            work I've delivered.
-          </p>
+        <SectionHeader
+    eyebrow="Featured Engineering Initiatives"
+    title="Enterprise Case Studies"
+    description="Enterprise engineering is measured by solving complex business problems at scale. These initiatives highlight the challenges, solutions and measurable outcomes from some of the most impactful work I've delivered."
+        />
 
         </div>
 

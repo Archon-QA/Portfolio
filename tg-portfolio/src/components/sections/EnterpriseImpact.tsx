@@ -1,3 +1,5 @@
+import SectionHeader from "../shared/SectionHeader";
+import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import MetricCard from "@/components/ui/MetricCard";
 
@@ -31,28 +33,21 @@ const metrics = [
 export default function EnterpriseImpact() {
   return (
     <section
-      id="impact"
+      id="experience"
       className="py-28"
     >
       <Container>
+<div className="mb-24">
 
-        <div className="mb-16 max-w-3xl">
+  <SectionNumber number="02" />
 
-          <span className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
-            Enterprise Impact
-          </span>
+  <SectionHeader
+    eyebrow="Enterprise Impact"
+    title="Engineering Outcomes"
+    description="Building enterprise automation is not only about writing tests. It is about creating measurable engineering outcomes that improve software quality, delivery speed and business confidence."
+  />
 
-          <h2 className="mt-5 text-4xl font-bold text-white md:text-5xl">
-            Engineering Outcomes
-          </h2>
-
-          <p className="mt-6 text-lg leading-8 text-zinc-400">
-            Building enterprise automation is not only about writing tests.
-            It is about creating measurable engineering outcomes that improve
-            software quality, delivery speed and business confidence.
-          </p>
-
-        </div>
+</div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
