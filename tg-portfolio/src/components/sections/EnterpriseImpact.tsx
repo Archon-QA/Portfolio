@@ -2,6 +2,7 @@ import SectionHeader from "../shared/SectionHeader";
 import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import MetricCard from "@/components/ui/MetricCard";
+import { Reveal } from "@/components/shared/motion";
 
 const metrics = [
   {
@@ -37,30 +38,31 @@ export default function EnterpriseImpact() {
       className="py-28"
     >
       <Container>
-<div className="mb-24">
 
-  <SectionNumber number="02" />
+        <Reveal>
+          <div className="mb-24">
+            <SectionNumber number="02" />
 
-  <SectionHeader
-    eyebrow="Enterprise Impact"
-    title="Engineering Outcomes"
-    description="Building enterprise automation is not only about writing tests. It is about creating measurable engineering outcomes that improve software quality, delivery speed and business confidence."
-  />
-
-</div>
-
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
-
-          {metrics.map((metric) => (
-            <MetricCard
-              key={metric.title}
-              value={metric.value}
-              title={metric.title}
-              description={metric.description}
+            <SectionHeader
+              eyebrow="Enterprise Impact"
+              title="Engineering Outcomes"
+              description="Building enterprise automation is not only about writing tests. It is about creating measurable engineering outcomes that improve software quality, delivery speed and business confidence."
             />
-          ))}
+          </div>
+        </Reveal>
 
-        </div>
+        <Reveal>
+          <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            {metrics.map((metric) => (
+              <MetricCard
+                key={metric.title}
+                value={metric.value}
+                title={metric.title}
+                description={metric.description}
+              />
+            ))}
+          </div>
+        </Reveal>
 
       </Container>
     </section>
