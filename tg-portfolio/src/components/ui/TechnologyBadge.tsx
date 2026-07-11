@@ -1,7 +1,5 @@
-import {
-  TechnologyCategoryStyles,
-  type JourneyTechnology,
-} from "@/data";
+import { TechnologyCategoryStyles } from "@/data/technology";
+import type { JourneyTechnology } from "@/data/journey";
 
 interface TechnologyBadgeProps {
   technology: JourneyTechnology;

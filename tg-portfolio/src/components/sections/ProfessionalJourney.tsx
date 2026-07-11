@@ -1,7 +1,7 @@
 import SectionHeader from "../shared/SectionHeader";
 import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
-import JourneyCard from "@/components/ui/JourneyCard";
+import JourneyCard from "@/components/ui/ExperienceCard";
 
 const journey = [
   {

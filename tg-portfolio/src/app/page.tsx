@@ -4,6 +4,7 @@ import EnterpriseImpact from "@/components/sections/EnterpriseImpact";
 import EngineeringExpertise from "@/components/sections/EngineeringExpertise";
 import FeaturedInitiatives from "@/components/sections/FeaturedInitiatives";
 import ProfessionalJourney from "@/components/sections/ProfessionalJourney";
+import EnterpriseJourney from "@/components/sections/EnterpriseJourney";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <EnterpriseImpact />
         <EngineeringExpertise />
         <FeaturedInitiatives />
+        <EnterpriseJourney />
         <ProfessionalJourney />
       </main>
     </>
