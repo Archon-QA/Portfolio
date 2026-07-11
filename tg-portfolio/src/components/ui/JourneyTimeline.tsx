@@ -1,21 +1,29 @@
 import { journey } from "@/data/journey";
+
 import JourneyCard from "./JourneyCard";
+
+import {
+  Timeline,
+  TimelineLine,
+  TimelineNode,
+} from "@/components/shared/timeline";
 
 export default function JourneyTimeline() {
   return (
-    <div
-      className="
-        grid
-        gap-8
-        lg:grid-cols-2
-      "
-    >
+    <Timeline>
+
+      <TimelineLine />
+
       {journey.map((step) => (
-        <JourneyCard
-          key={step.phase}
-          step={step}
-        />
+        <TimelineNode key={step.phase}>
+
+          <JourneyCard
+            step={step}
+          />
+
+        </TimelineNode>
       ))}
-    </div>
+
+    </Timeline>
   );
 }
