@@ -4,26 +4,32 @@ import JourneyCard from "./JourneyCard";
 
 import {
   Timeline,
-  TimelineLine,
   TimelineNode,
 } from "@/components/shared/timeline";
 
 export default function JourneyTimeline() {
   return (
     <Timeline>
+      {journey.map((step, index) => {
+        let state: "inactive" | "active" | "completed" =
+          "inactive";
 
-      <TimelineLine />
+        if (index < 2) {
+          state = "completed";
+        } else if (index === 2) {
+          state = "active";
+        }
 
-      {journey.map((step) => (
-        <TimelineNode key={step.phase}>
-
-          <JourneyCard
-            step={step}
-          />
-
-        </TimelineNode>
-      ))}
-
+        return (
+          <TimelineNode
+            key={step.phase}
+            isLast={index === journey.length - 1}
+            state={state}
+          >
+            <JourneyCard step={step} />
+          </TimelineNode>
+        );
+      })}
     </Timeline>
   );
 }
