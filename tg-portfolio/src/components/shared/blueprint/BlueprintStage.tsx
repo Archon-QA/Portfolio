@@ -1,31 +1,47 @@
+import { forwardRef } from "react";
+
 import BlueprintNode from "./BlueprintNode";
 
-import type {
-  BlueprintStageData,
-} from "./";
+import type { BlueprintState } from "./types";
 
-type BlueprintStageProps = BlueprintStageData;
-
-export default function BlueprintStage({
-  title,
-  subtitle,
-  state = "inactive",
-}: BlueprintStageProps) {
-  return (
-    <div className="flex flex-col items-center gap-3">
-      <BlueprintNode state={state} />
-
-      <div className="text-center">
-        <h4 className="text-sm font-semibold tracking-wide text-white">
-          {title}
-        </h4>
-
-        {subtitle && (
-          <p className="mt-1 text-xs text-white/50">
-            {subtitle}
-          </p>
-        )}
-      </div>
-    </div>
-  );
+interface BlueprintStageProps {
+  title: string;
+  subtitle?: string;
+  state?: BlueprintState;
 }
+
+const BlueprintStage = forwardRef<HTMLDivElement, BlueprintStageProps>(
+  (
+    {
+      title,
+      subtitle,
+      state = "inactive",
+    },
+    ref
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className="flex flex-col items-center text-center"
+      >
+        <BlueprintNode state={state} />
+
+        <div className="mt-4">
+          <h4 className="text-sm font-semibold text-white">
+            {title}
+          </h4>
+
+          {subtitle && (
+            <p className="mt-1 text-xs text-slate-400">
+              {subtitle}
+            </p>
+          )}
+        </div>
+      </div>
+    );
+  }
+);
+
+BlueprintStage.displayName = "BlueprintStage";
+
+export default BlueprintStage;

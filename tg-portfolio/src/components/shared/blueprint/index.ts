@@ -1,3 +1,5 @@
+export { default as BlueprintGraph } from "./BlueprintGraph";
+
 export { default as BlueprintFlow } from "./BlueprintFlow";
 export { default as BlueprintStage } from "./BlueprintStage";
 export { default as BlueprintNode } from "./BlueprintNode";

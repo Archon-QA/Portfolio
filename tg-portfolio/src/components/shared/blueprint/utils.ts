@@ -2,7 +2,9 @@ import {
   blueprintConnectorTokens,
 } from "./tokens";
 
-import { BLUEPRINT } from "./constants";
+import {
+  BLUEPRINT,
+} from "./constants";
 
 import type {
   BlueprintOrientation,

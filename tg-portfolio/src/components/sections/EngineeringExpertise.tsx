@@ -2,6 +2,7 @@ import SectionHeader from "../shared/SectionHeader";
 import SectionNumber from "../shared/SectionNumber";
 import Container from "@/components/ui/Container";
 import ExpertiseCard from "@/components/ui/ExpertiseCard";
+import { OMSBlueprint } from "./case-studies/blueprints";
 
 const expertise = [
   {
@@ -57,21 +58,22 @@ export default function EngineeringExpertise() {
       className="py-32"
     >
       <Container>
-
         <div className="mb-24">
+          <SectionNumber number="03" />
 
-    <SectionNumber number="03" />
+          <SectionHeader
+            eyebrow="Engineering Expertise"
+            title="Core Capabilities"
+            description="My expertise extends beyond individual tools. I focus on designing reliable automation solutions, validating complex enterprise workflows and improving software delivery quality."
+          />
+        </div>
 
-    <SectionHeader
-    eyebrow="Engineering Expertise"
-    title="Core Capabilities"
-    description="My expertise extends beyond individual tools. I focus on designing reliable automation solutions, validating complex enterprise workflows and improving software delivery quality."
-    />
-
+        {/* Enterprise Architecture Preview */}
+        <div className="mb-24">
+          <OMSBlueprint />
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">
-
           {expertise.map((item) => (
             <ExpertiseCard
               key={item.title}
@@ -80,9 +82,7 @@ export default function EngineeringExpertise() {
               items={item.items}
             />
           ))}
-
         </div>
-
       </Container>
     </section>
   );
