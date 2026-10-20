@@ -2,7 +2,7 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 import PrimaryButton from "@/components/ui/PrimaryButton";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 export default function HeroActions() {
   return (

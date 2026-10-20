@@ -1,4 +1,4 @@
-export { Button } from "./Button";
+export { Button } from "./button";
 export { default as PrimaryButton } from "./PrimaryButton";
 export { default as MetricCard } from "./MetricCard";
 export { default as ExperienceCard } from "./ExperienceCard";
