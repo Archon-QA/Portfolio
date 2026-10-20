@@ -56,14 +56,14 @@ const journey = [
 export default function ProfessionalJourney() {
   return (
     <section
-      id="experience"
-      className="py-32"
-    >
+  id="professional-journey"
+  className="py-32"
+>
       <Container>
 
         <div className="mb-24">
 
-  <SectionNumber number="05" />
+  <SectionNumber number="06" />
 
   <SectionHeader
     eyebrow="Professional Journey"
