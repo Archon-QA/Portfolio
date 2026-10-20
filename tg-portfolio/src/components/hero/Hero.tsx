@@ -28,15 +28,16 @@ export default function Hero() {
 
       <div
         className="
-          absolute
-          bottom-0
-          left-0
-          h-48
-          w-full
-          bg-gradient-to-b
-          from-transparent
-          to-[#05070d]
-        "
+        pointer-events-none
+        absolute
+        bottom-0
+        left-0
+        h-48
+        w-full
+        bg-gradient-to-b
+        from-transparent
+        to-[#05070d]
+      "
       />
     </section>
   );
