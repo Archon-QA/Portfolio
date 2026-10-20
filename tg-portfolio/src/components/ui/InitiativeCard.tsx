@@ -1,3 +1,4 @@
+
 interface InitiativeCardProps {
   title: string;
   subtitle: string;
@@ -18,109 +19,129 @@ export default function InitiativeCard({
   featured = false,
 }: InitiativeCardProps) {
   return (
-    <div
+    <article
       className={`
         group
+        flex
+        h-full
+        min-w-0
+        flex-col
         rounded-3xl
         border
         border-white/10
-        bg-white/5
-        transition-all
+        bg-white/[0.04]
+        transition-colors
         duration-300
-        hover:-translate-y-2
         hover:border-blue-500/40
-        hover:bg-white/10
+        hover:bg-white/[0.06]
         ${
           featured
-            ? "p-10"
-            : "p-8"
+            ? "p-6 sm:p-8 lg:p-10"
+            : "p-6 sm:p-7 lg:p-8"
         }
       `}
     >
-      <div>
-
-        <span className="text-sm uppercase tracking-[0.25em] text-blue-400">
+      <header>
+        <span className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-400">
           {title}
         </span>
 
-        <h3 className="mt-4 text-3xl font-bold text-white">
+        <h3
+          className={`
+            mt-3
+            max-w-2xl
+            font-semibold
+            leading-tight
+            tracking-tight
+            text-white
+            ${
+              featured
+                ? "text-2xl sm:text-3xl"
+                : "text-xl sm:text-2xl"
+            }
+          `}
+        >
           {subtitle}
         </h3>
+      </header>
 
-      </div>
-
-      <div className="mt-8 space-y-6">
-
-        <div>
-
-          <h4 className="mb-2 text-sm uppercase tracking-widest text-zinc-500">
+      <div
+        className={`
+          mt-6
+          grid
+          gap-5
+          ${
+            featured
+              ? "lg:grid-cols-2 lg:gap-8"
+              : "grid-cols-1"
+          }
+        `}
+      >
+        <section>
+          <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
             Challenge
           </h4>
 
-          <p className="leading-7 text-zinc-300">
+          <p className="text-sm leading-6 text-zinc-300 sm:text-base sm:leading-7">
             {challenge}
           </p>
+        </section>
 
-        </div>
-
-        <div>
-
-          <h4 className="mb-2 text-sm uppercase tracking-widest text-zinc-500">
+        <section>
+          <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
             Solution
           </h4>
 
-          <p className="leading-7 text-zinc-300">
+          <p className="text-sm leading-6 text-zinc-300 sm:text-base sm:leading-7">
             {solution}
           </p>
-
-        </div>
-
-        <div>
-
-          <h4 className="mb-3 text-sm uppercase tracking-widest text-zinc-500">
-            Impact
-          </h4>
-
-          <ul className="space-y-2">
-
-            {impact.map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-3 text-zinc-200"
-              >
-                <span className="h-2 w-2 rounded-full bg-blue-500" />
-
-                {item}
-              </li>
-            ))}
-
-          </ul>
-
-        </div>
-
+        </section>
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-2">
+      <section className="mt-6 border-t border-white/10 pt-5">
+        <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-blue-400">
+          Key Impact
+        </h4>
 
-        {technologies.map((technology) => (
-          <span
-            key={technology}
-            className="
-              rounded-full
-              border
-              border-blue-500/20
-              bg-blue-500/10
-              px-3
-              py-1
-              text-sm
-              text-blue-300
-            "
-          >
-            {technology}
-          </span>
-        ))}
+        <ul className="space-y-3">
+          {impact.map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-3 text-sm leading-6 text-zinc-200 sm:text-base"
+            >
+              <span
+                aria-hidden="true"
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-400"
+              />
 
-      </div>
-    </div>
+              <span className="min-w-0">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <footer className="mt-auto pt-7">
+        <div className="flex flex-wrap gap-2">
+          {technologies.map((technology) => (
+            <span
+              key={technology}
+              className="
+                rounded-full
+                border
+                border-blue-500/20
+                bg-blue-500/[0.08]
+                px-3
+                py-1.5
+                text-xs
+                leading-5
+                text-blue-200
+              "
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
+      </footer>
+    </article>
   );
 }

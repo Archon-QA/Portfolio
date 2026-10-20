@@ -1,7 +1,4 @@
-import {
-  TechnologyCategory,
-  type TechnologyCategory as TechnologyCategoryType,
-} from "./technology";
+import type { TechnologyCategory as TechnologyCategoryType } from "./technology";
 
 export interface CaseStudyTechnology {
   name: string;

@@ -20,7 +20,7 @@ export default function Hero() {
       <Background />
 
       <Container>
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <HeroContent />
           <HeroCard />
         </div>

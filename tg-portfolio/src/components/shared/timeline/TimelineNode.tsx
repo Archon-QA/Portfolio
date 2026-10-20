@@ -1,3 +1,4 @@
+
 "use client";
 
 import { ReactNode } from "react";
@@ -55,20 +56,20 @@ export default function TimelineNode({
   };
 
   return (
-    <div className="relative flex gap-0">
+    <div className="relative flex min-w-0 gap-0">
       {/* Timeline Column */}
-
       <div
         className="
           relative
           flex
-          w-8
+          w-6
+          shrink-0
           flex-col
           items-center
+          sm:w-8
         "
       >
         {/* Node */}
-
         <div
           className={`
             relative
@@ -77,6 +78,7 @@ export default function TimelineNode({
             flex
             h-6
             w-6
+            shrink-0
             items-center
             justify-center
             rounded-full
@@ -86,8 +88,6 @@ export default function TimelineNode({
             ${nodeClasses[state]}
           `}
         >
-          {/* Inner Dot */}
-
           <div
             className={`
               h-2.5
@@ -95,20 +95,18 @@ export default function TimelineNode({
               rounded-full
               transition-all
               duration-500
-
               ${
                 state === "inactive"
                   ? "bg-white/30"
                   : state === "active"
-                  ? "bg-blue-300"
-                  : "bg-blue-200"
+                    ? "bg-blue-300"
+                    : "bg-blue-200"
               }
             `}
           />
         </div>
 
         {/* Vertical Connector */}
-
         {!isLast && (
           <div
             className={`
@@ -124,15 +122,13 @@ export default function TimelineNode({
         )}
       </div>
 
-      {/* Horizontal Connector */}
-
-      <TimelineConnector
-        active={state !== "inactive"}
-      />
+      {/* Horizontal Connector: desktop only */}
+      <div className="hidden sm:block">
+        <TimelineConnector active={state !== "inactive"} />
+      </div>
 
       {/* Card */}
-
-      <div className="ml-2 flex-1">
+      <div className="ml-2 min-w-0 flex-1 sm:ml-2">
         {children}
       </div>
     </div>
